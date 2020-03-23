@@ -11,7 +11,12 @@ var redisHost = process.env.REDIS_HOST;
 var redisPassword = process.env.REDIS_PASSWORD;
 
 var ioRedis = require('ioredis');
-var redis = new ioRedis(redisPort, redisHost, redisPassword);
+//var redis = new ioRedis(redisPort, redisHost, redisPassword);
+var redis = new ioRedis({
+    port: redisPort, // Redis port
+    host: redisHost, // Redis host
+    password: redisPassword,
+});
 
 redis.subscribe(['notify-chanel']);
 
