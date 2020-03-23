@@ -8,9 +8,10 @@ require('dotenv').config();
 
 var redisPort = process.env.REDIS_PORT;
 var redisHost = process.env.REDIS_HOST;
+var redisPassword = process.env.REDIS_PASSWORD;
 
 var ioRedis = require('ioredis');
-var redis = new ioRedis(redisPort, redisHost);
+var redis = new ioRedis(redisPort, redisHost, redisPassword);
 
 redis.subscribe(['notify-chanel']);
 
