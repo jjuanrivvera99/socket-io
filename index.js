@@ -25,7 +25,7 @@ redis.on('message', function (channel, message) {
     io.emit(channel + ':' + message.event, message.data);
 });
 
-var broadcastPort = process.env.BROADCAST_PORT || 5000;
+var broadcastPort = process.env.PORTT || process.env.BROADCAST_POR || 5000;
 
 server.listen(broadcastPort, function () {
     console.log('Socket server is running.');
