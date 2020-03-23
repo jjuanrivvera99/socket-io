@@ -2,6 +2,9 @@
     "name": "socket-io-server",
     "version": "0.0.1",
     "description": "Socket IO Server",
+    "scripts": {
+        "start" : "node index.js"
+    },
     "dependencies": {
         "cross-env": "^7.0.2",
         "dotenv": "^8.2.0",
