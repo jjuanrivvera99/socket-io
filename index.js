@@ -7,9 +7,7 @@ const url = require('url');
 
 require('dotenv').config();
 
-if (process.env.REDIS_URL) {
-    const redisURL = url.parse(process.env.REDIS_URL);
-}
+const redisURL = url.parse(process.env.REDIS_URL);
 
 const redisPort = process.env.REDIS_PORT || redisURL.port;
 const redisHost = process.env.REDIS_HOST || redisURL.hostname;
