@@ -10,9 +10,9 @@ if (process.env.REDIS_URL) {
     const redisURL = url.parse(process.env.REDIS_URL);
 }
 
-const redisPort = process.env.REDIS_PORT;
-const redisHost = process.env.REDIS_HOST;
-const redisPassword = process.env.REDIS_PASSWORD;
+const redisPort = process.env.REDIS_PORT || redisURL.port;
+const redisHost = process.env.REDIS_HOST || redisURL.hostname;
+const redisPassword = process.env.REDIS_PASSWORD || redisURL.auth.replace('h:', '');
 
 const broadcastPort = process.env.PORT || process.env.BROADCAST_PORT || 5000;
 
